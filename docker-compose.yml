@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  churn-api:
+    build: .
+    container_name: churn_prediction_service
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_PATH=random_forest_model.pkl
+    restart: unless-stopped
